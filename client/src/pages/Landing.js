@@ -1,47 +1,43 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Form, FormControl, Button } from "react-bootstrap";
+import './Landing.scss';
 import Powerslap from "../video/background.mp4"
 
 
 function Landing(){
     return(
-        <section>
+        <section >
+            <Container className="hero-container">
             <video
             autoPlay
             loop
             muted
-            style={{
-                position: "absolute",
-                width: "100%",
-                left: "50%",
-                top: "50%",
-                height: "100%",
-                objectFit: "cover",
-                transform: "translate(-50%, -50%)",
-                zIndex: "-1"
-            }}
             >
             <source src={Powerslap} type="video/mp4" />
-            </video>
-
+            </video> 
+            <h1>Feeling Full, need to empty ? <strong>
+              <span className="wave">🧻</span></strong> </h1>
+              <Form inline>
+              <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+              <Button variant="outline-light">Search</Button>
+              </Form>  
             
-        <Container fluid className="home-section" id="home">
-          <Container className="home-content">
+            </Container>
+
+
+        {/* <Container fluid className="home-section" id="home">
+          <Container className="home-content hero-container">
             <Row>
               <Col md={7} className="home-header">
                 <h1 style={{ paddingBottom: 15 }} className="heading">
-                Feeling Full, need to empty ? <span className="wave">🧻</span>
+                <strong className="main-name"> Feeling Full, need to empty ? <span className="wave">🧻</span></strong>
                 </h1>
-                <h1 className="heading-name">
-                  I'M
-                  <strong className="main-name"> Ramya Mariyala</strong>
-                </h1>
-                <div style={{ padding: 50, textAlign: "left" }}>
+                <div style={{ padding: 50, textAlign: "center" }}>
                 </div>
               </Col>
             </Row>
           </Container>
-        </Container> 
+        </Container>  */}
       </section>
     )
 }
