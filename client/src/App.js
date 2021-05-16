@@ -6,7 +6,7 @@ import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Login from "./pages/Login";
 import UserContext from "./utils/UserContext";
-import Landing from "./pages/Landing";
+import Landing from "./pages/Landing.js";
 import SignUp from "./pages/SignUp";
 import Logout from "./pages/Logout";
 
