@@ -15,29 +15,15 @@ function Landing(){
             >
             <source src={Powerslap} type="video/mp4" />
             </video> 
-            <h1>Feeling Full, need to empty ? <strong>
-              <span className="wave">🧻</span></strong> </h1>
+            <h1> SKIP TO THE LOO <span className="wave">🚻</span> </h1>
+              <p>Feeling Full, need to empty ? <strong>
+              <span className="wave">🧻</span></strong></p>
               <Form inline>
-              <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+              <FormControl type="text" placeholder="Search for Loo" className="mr-sm-2" />
               <Button variant="outline-light">Search</Button>
               </Form>  
             
             </Container>
-
-
-        {/* <Container fluid className="home-section" id="home">
-          <Container className="home-content hero-container">
-            <Row>
-              <Col md={7} className="home-header">
-                <h1 style={{ paddingBottom: 15 }} className="heading">
-                <strong className="main-name"> Feeling Full, need to empty ? <span className="wave">🧻</span></strong>
-                </h1>
-                <div style={{ padding: 50, textAlign: "center" }}>
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        </Container>  */}
       </section>
     )
 }
