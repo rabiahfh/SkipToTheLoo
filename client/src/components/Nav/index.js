@@ -2,7 +2,6 @@ import React, {useState, Fragment, useContext} from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../../utils/UserContext";
 import LoginForm from "../LoginForm";
-import logo from "../../images/logo.PNG";
 import { Container, Navbar, Col, Form, FormControl, Button } from "react-bootstrap";
 
 import './style.scss';
@@ -10,24 +9,8 @@ import './style.scss';
 function Nav() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
-  const [loginExpanded, setLoginExpanded] = useState(false);
-  const {email, loggedIn} = useContext(UserContext);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
-
-  // const showButton = () => {
-  //   if (window.innerWidth <= 960) {
-  //     setButton(false);
-  //   } else {
-  //     setButton(true);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   showButton();
-  // }, []);
-
-  // window.addEventListener('resize', showButton);
 
   return (
     <Navbar bg="dark" variant="dark">
@@ -49,20 +32,20 @@ function Nav() {
             </li>
             <li className='nav-item'>
               <Link
-                to='/services'
+                to='/adding'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                Services
+                Add a Loo
               </Link>
             </li>
             <li className='nav-item'>
               <Link
-                to='/products'
+                to='/rate'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                Products
+                Rate a Loo
               </Link>
             </li>
 
@@ -76,7 +59,7 @@ function Nav() {
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}      
+          {button && <Button buttonStyle='btn--outline'>LOGIN IN</Button>}      
       {/* { (() => {
         if(loggedIn){
           return <p className="logged-in-text">Logged in as {email} <Link to="/logout" onClick={ () => setLoginExpanded(false)}>Logout</Link> </p>;
