@@ -10,6 +10,7 @@ import Landing from "./pages/Landing.js";
 import SignUp from "./pages/SignUp";
 import Logout from "./pages/Logout";
 
+
 function App() {
   const [email, setEmail] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
@@ -23,9 +24,15 @@ function App() {
             <Route exact path="/login">
               <Login />
             </Route>
-            <Route exact path="/signup">
+            <Route exact path="/sign-up">
               <SignUp />
             </Route>
+            {/* <Route exact path="/rate">
+              <AddaLoo />
+            </Route>
+            <Route exact path="/adding">
+              <RateaLoo />
+            </Route> */}
             <Route exact path="/logout">
               <Logout />
             </Route>

@@ -52,14 +52,22 @@ function Nav() {
             <li>
               <Link
                 to='/sign-up'
-                className='nav-links-mobile'
+                className='nav-links'
                 onClick={closeMobileMenu}
               >
                 Sign Up
               </Link>
-            </li>
+            </li>         
           </ul>
-          {button && <Button buttonStyle='btn--outline'>LOGIN IN</Button>}      
+          <Button buttonStyle='btn--outline' className="button">
+              <Link
+                to='/login'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              > LOGIN
+              </Link>
+              </Button>
+          {/* {button && <Button buttonStyle='btn--outline'>LOGIN IN</Button>}       */}
       {/* { (() => {
         if(loggedIn){
           return <p className="logged-in-text">Logged in as {email} <Link to="/logout" onClick={ () => setLoginExpanded(false)}>Logout</Link> </p>;
