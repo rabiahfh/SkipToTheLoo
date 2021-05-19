@@ -2,17 +2,65 @@ import React, {useState, Fragment, useContext} from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../../utils/UserContext";
 import LoginForm from "../LoginForm";
+import { Container, Navbar, Col, Form, FormControl, Button } from "react-bootstrap";
+
 import './style.scss';
 
 function Nav() {
-  const [loginExpanded, setLoginExpanded] = useState(false);
-  const {email, loggedIn} = useContext(UserContext);
+  const [click, setClick] = useState(false);
+  const [button, setButton] = useState(true);
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a className="navbar-brand" href="/">
-        React Reading List
-      </a>
-      { (() => {
+    <Navbar bg="dark" variant="dark">
+      <Navbar.Brand href="/" className='navbar-logo'>
+      <Link to='/' className='navbar-logo'>
+            SkipToTheLoo
+            <i class='fab fa-typo3' />
+      </Link>
+      </Navbar.Brand>
+
+      <div className='menu-icon' onClick={handleClick}>
+            <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+          </div>
+          <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+            <li className='nav-item'>
+              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                Home
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link
+                to='/adding'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                Add a Loo
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link
+                to='/rate'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                Rate a Loo
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to='/sign-up'
+                className='nav-links-mobile'
+                onClick={closeMobileMenu}
+              >
+                Sign Up
+              </Link>
+            </li>
+          </ul>
+          {button && <Button buttonStyle='btn--outline'>LOGIN IN</Button>}      
+      {/* { (() => {
         if(loggedIn){
           return <p className="logged-in-text">Logged in as {email} <Link to="/logout" onClick={ () => setLoginExpanded(false)}>Logout</Link> </p>;
         }
@@ -29,10 +77,11 @@ function Nav() {
             )
           } 
         }
-      })()}
+      })()} */}
       
-    </nav>
+    </Navbar>
   );
 }
 
 export default Nav;
+
