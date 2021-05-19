@@ -8,6 +8,8 @@ import Login from "./pages/Login";
 import UserContext from "./utils/UserContext";
 import SignUp from "./pages/SignUp";
 import Logout from "./pages/Logout";
+import WelcomeUser from "./pages/WelcomeUser";
+import AddedBathrooms from "./pages/AddedBathrooms";
 
 function App() {
   const [email, setEmail] = useState("");
@@ -20,6 +22,12 @@ function App() {
           <Switch>
             <Route exact path="/login">
               <Login />
+            </Route>
+            <Route exact path="/">
+              <WelcomeUser />
+            </Route>
+            <Route exact path="/add">
+              <AddedBathrooms/>
             </Route>
             <Route exact path="/signup">
               <SignUp />
