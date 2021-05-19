@@ -9,6 +9,8 @@ import UserContext from "./utils/UserContext";
 import Landing from "./pages/Landing.js";
 import SignUp from "./pages/SignUp";
 import Logout from "./pages/Logout";
+import WelcomeUser from "./pages/WelcomeUser";
+import AddedBathrooms from "./pages/AddedBathrooms";
 
 function App() {
   const [email, setEmail] = useState("");
@@ -22,6 +24,12 @@ function App() {
           <Route path="/" exact component={Landing} />
             <Route exact path="/login">
               <Login />
+            </Route>
+            <Route exact path="/welcome">
+              <WelcomeUser />
+            </Route>
+            <Route exact path="/add">
+              <AddedBathrooms/>
             </Route>
             <Route exact path="/signup">
               <SignUp />
