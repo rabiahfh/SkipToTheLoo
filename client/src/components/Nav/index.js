@@ -16,7 +16,7 @@ function Nav() {
     <Navbar bg="dark" variant="dark">
       <Navbar.Brand href="/" className='navbar-logo'>
       <Link to='/' className='navbar-logo'>
-            SkipToTheLoo
+      <span className="wave">🚻</span>SkipToTheLoo  
             <i class='fab fa-typo3' />
       </Link>
       </Navbar.Brand>
