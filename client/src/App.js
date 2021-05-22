@@ -32,15 +32,15 @@ function App() {
             <Route exact path="/add">
               <AddedBathrooms/>
             </Route>
-            <Route exact path="/signup">
+            <Route exact path="/sign-up">
               <SignUp />
             </Route>
-            {/* <Route exact path="/rate">
-              <AddaLoo />
-            </Route>
             <Route exact path="/adding">
-              <RateaLoo />
-            </Route> */}
+              <AddedBathrooms />
+            </Route>
+            <Route exact path="/welcome">
+              <WelcomeUser />
+            </Route>
             <Route exact path="/logout">
               <Logout />
             </Route>

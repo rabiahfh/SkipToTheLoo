@@ -1,14 +1,14 @@
 
 // import React from 'react';
-// import validate from './validateInfo';
+
 // import useForm from './useForm';
 // import './Form.css';
 
 // const FormSignup = ({ submitForm }) => {
-  const { handleChange, handleSubmit, values, errors } = useForm(
-    submitForm,
-    validate
-  );
+//   const { handleChange, handleSubmit, values, errors } = useForm(
+//     submitForm,
+//     validate
+//   );
 
 //   return (
 //     <div className='form-content-right'>
@@ -17,18 +17,18 @@
 //           Get started with us today! Create your account by filling out the
 //           information below.
 //         </h1>
-        // <div className='form-inputs'>
-        //   <label className='form-label'>Username</label>
-        //   <input
-        //     className='form-input'
-        //     type='text'
-        //     name='username'
-        //     placeholder='Enter your username'
-        //     value={values.username}
-        //     onChange={handleChange}
-        //   />
-        //   {errors.username && <p>{errors.username}</p>}
-        // </div>
+//         <div className='form-inputs'>
+//           <label className='form-label'>Username</label>
+//           <input
+//             className='form-input'
+//             type='text'
+//             name='username'
+//             placeholder='Enter your username'
+//             value={values.username}
+//             onChange={handleChange}
+//           />
+//           {errors.username && <p>{errors.username}</p>}
+//         </div>
 //         <div className='form-inputs'>
 //           <label className='form-label'>Email</label>
 //           <input
@@ -87,22 +87,16 @@
 
 
 import React, { Fragment, useContext, useRef } from 'react';
-import validate from './validateInfo';
-import useForm from './useForm';
-import './Form.css';
+// import "./style.scss";
 import API from '../../utils/API';
+import { Link } from "react-router-dom";
 import UserContext from '../../utils/UserContext';
+import validate from './validateInfo';
 
 function SignUpForm(props) {
     const { email, setEmail, loggedIn, setLoggedIn } = useContext(UserContext);
     const emailInput = useRef();
     const passwordInput = useRef();
-
-    const { handleChange, handleSubmit, values, errors } = useForm(
-      submitForm,
-      validate
-    );
-
     let extraProps = {}
     if (props.className) {
         extraProps.className = props.className;
@@ -133,25 +127,7 @@ function SignUpForm(props) {
             });
     }
     return (
-      <div className='form-content-right'>
-        <form onSubmit={handleSubmit} className='form' noValidate>
-         <h1>
-            Get started with us today! Create your account by filling out the
-             information below.
-        </h1>
         <Fragment>
-        <div className='form-inputs'>
-          <label className='form-label'>Username</label>
-          <input
-            className='form-input'
-            type='text'
-            name='username'
-            placeholder='Enter your username'
-            value={values.username}
-            onChange={handleChange}
-          />
-          {errors.username && <p>{errors.username}</p>}
-        </div>
             { (() => {
                 if (!loggedIn) {
                     return (<form {...extraProps} onSubmit={handleSubmit}>
@@ -164,7 +140,10 @@ function SignUpForm(props) {
                             <label htmlFor={passwordId}>Password</label>
                             <input ref={passwordInput} type="password" className="form-control" id={passwordId} />
                         </div>
-                        <button type="submit" className="btn btn-primary">Sign Up</button>
+                        <Link to='/login' >
+                        <button type="submit" className="btn btn-primary"> Sign Up </button>
+                        </Link>
+                        
                     </form>
                     );
                 }
@@ -174,8 +153,6 @@ function SignUpForm(props) {
             })()
             }
         </Fragment>
-        </form>
-        </div>
     )
 }
 

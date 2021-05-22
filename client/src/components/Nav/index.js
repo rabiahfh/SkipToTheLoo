@@ -39,7 +39,7 @@ function Nav() {
                 Add a Loo
               </Link>
             </li>
-            <li className='nav-item'>
+            {/* <li className='nav-item'>
               <Link
                 to='/rate'
                 className='nav-links'
@@ -47,7 +47,7 @@ function Nav() {
               >
                 Rate a Loo
               </Link>
-            </li>
+            </li> */}
 
             <li>
               <Link

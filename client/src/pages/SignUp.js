@@ -7,7 +7,7 @@ function SignUp(props){
     const {loggedIn} = useContext(UserContext);
     return (
         <div className="container">
-            {loggedIn && <Redirect to="/" />}
+            {loggedIn && <Redirect to="/welcome" />}
             <h1>SignUp</h1>
             <SignUpForm className="full-page-signup" />
         </div>

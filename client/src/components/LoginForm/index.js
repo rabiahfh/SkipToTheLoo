@@ -2,7 +2,8 @@ import React, { Fragment, useContext, useRef } from 'react';
 import "./style.scss";
 import API from '../../utils/API';
 import UserContext from '../../utils/UserContext';
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useHistory  } from "react-router-dom";
 
 function LoginForm(props) {
     const { email, setEmail, loggedIn, setLoggedIn } = useContext(UserContext);
@@ -54,8 +55,10 @@ function LoginForm(props) {
                         <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
                     </div>
                 </div>
-
+                <Link to='/Welcome' >
                 <button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</button>
+                </Link>
+                
                 <p className="forgot-password text-right">
                     Forgot <a href="#">password?</a>
                 </p>
