@@ -25,7 +25,7 @@ const restroomSeed = [
 
 db.Restroom
   .remove({})
-  .then(() => db.Book.collection.insertMany(bookSeed))
+  .then(() => db.restroomSeed.collection.insertMany(restroomSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
