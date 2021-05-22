@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import LoginForm from '../components/LoginForm';
 import {Redirect} from 'react-router-dom';
-import UserContext from '../utils/UserContext';
+import UserContext from '../utils/UserContext'; 
+// import "./style.scss";
 
 function Login(props){
     const {loggedIn} = useContext(UserContext);
