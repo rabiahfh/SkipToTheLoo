@@ -9,7 +9,7 @@ function Login(props){
     return (
         <div className="container">
             {loggedIn && <Redirect to="/" />}
-            <h1>Login</h1>
+            <h1 style={{ textAlign: "center" }}>Login</h1>
             <LoginForm className="full-page-login" />
         </div>
     )

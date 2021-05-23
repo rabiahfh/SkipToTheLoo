@@ -5,7 +5,10 @@ import { Container, Navbar, Col, Form, FormControl, Button } from "react-bootstr
 // That way we don't have to define them all individually
 function Alert(props) {
   return (
-    
+    <div class="alert alert-danger" role="alert">
+  A simple danger alert—check it out!
+</div>
+
   );
 }
 export default Alert;

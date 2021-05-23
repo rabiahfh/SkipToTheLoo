@@ -3,7 +3,7 @@ import './Form.css';
 // import Img2 from "./images/Img-2.PNG"
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import './Form.css';
+
 
 const FormSuccess = () => {
          

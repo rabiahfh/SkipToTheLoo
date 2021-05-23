@@ -8,7 +8,7 @@ function SignUp(props){
     return (
         <div className="container">
             {loggedIn && <Redirect to="/welcome" />}
-            <h1>SignUp</h1>
+            <h1 style={{ textAlign: "center" }} >SignUp</h1>
             <SignUpForm className="full-page-signup" />
         </div>
     )
