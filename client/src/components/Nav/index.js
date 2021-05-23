@@ -16,7 +16,7 @@ function Nav() {
     <Navbar bg="dark" variant="dark">
       <Navbar.Brand href="/" className='navbar-logo'>
       <Link to='/' className='navbar-logo'>
-            SkipToTheLoo
+      <span className="wave">🚻</span>SkipToTheLoo  
             <i class='fab fa-typo3' />
       </Link>
       </Navbar.Brand>
@@ -39,7 +39,7 @@ function Nav() {
                 Add a Loo
               </Link>
             </li>
-            <li className='nav-item'>
+            {/* <li className='nav-item'>
               <Link
                 to='/rate'
                 className='nav-links'
@@ -47,19 +47,27 @@ function Nav() {
               >
                 Rate a Loo
               </Link>
-            </li>
+            </li> */}
 
             <li>
               <Link
                 to='/sign-up'
-                className='nav-links-mobile'
+                className='nav-links'
                 onClick={closeMobileMenu}
               >
                 Sign Up
               </Link>
-            </li>
+            </li>         
           </ul>
-          {button && <Button buttonStyle='btn--outline'>LOGIN IN</Button>}      
+          <Button buttonStyle='btn--outline' className="button">
+              <Link
+                to='/login'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              > LOGIN
+              </Link>
+              </Button>
+          {/* {button && <Button buttonStyle='btn--outline'>LOGIN IN</Button>}       */}
       {/* { (() => {
         if(loggedIn){
           return <p className="logged-in-text">Logged in as {email} <Link to="/logout" onClick={ () => setLoginExpanded(false)}>Logout</Link> </p>;

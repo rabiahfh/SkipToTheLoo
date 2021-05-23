@@ -1,33 +1,28 @@
 import React, { Fragment, useContext, useRef } from 'react';
-import "./style.scss";
+// import "./style.scss";
 import API from '../../utils/API';
-import UserContext from '../../utils/UserContext';
 import { Link } from "react-router-dom";
-import { useHistory  } from "react-router-dom";
+import UserContext from '../../utils/UserContext';
+import './Form.css';
+import validate from './validateInfo';
 
-function LoginForm(props) {
+function SignUpForm(props) {
     const { email, setEmail, loggedIn, setLoggedIn } = useContext(UserContext);
-    const history = useHistory();
     const emailInput = useRef();
     const passwordInput = useRef();
     let extraProps = {}
     if (props.className) {
         extraProps.className = props.className;
     }
-    let emailId = props.className ? props.className + "-login-email" : "login-email";
-    let emailHelpId = props.className ? props.className + "-login-email-help" : "login-email-help";
-    let passwordId = props.className ? props.className + "-login-password" : "login-password";
+    let emailId = props.className ? props.className + "-signup-email" : "signup-email";
+    let emailHelpId = props.className ? props.className + "-signup-email-help" : "signup-email-help";
+    let passwordId = props.className ? props.className + "-signup-password" : "signup-password";
     const handleSubmit = event => {
-        // if the user hits enter or hits the button, this function will fire
-        event.preventDefault();
-        // console.log("submit happened");
-        // console.log({ email: emailInput.current.value, password: passwordInput.current.value});
-        API.login({ email: emailInput.current.value, password: passwordInput.current.value})
+        API.signup({ email: emailInput.current.value, password: passwordInput.current.value})
             .then(data => {
                 // console.log(data);
                 setEmail(data.data.email);
                 setLoggedIn(true);
-                history.push("/");
             })
             .catch(err => {
                 console.log(err);
@@ -37,10 +32,9 @@ function LoginForm(props) {
         <Fragment>
             <div className='form-content-right'>
             <form onSubmit={handleSubmit} className='form' noValidate>
-            <h1 style={{ fontSize:"30px", color:"rgb(240, 217, 17)"}}>
-                Welcome to
-            <span className="wave">🚻</span>SkipToTheLoo  
-            <i class='fab fa-typo3' />
+            <h1>
+              Get started with us today! Create your account by filling out the
+              information below.
               </h1>
             { (() => {
                 if (!loggedIn) {
@@ -54,7 +48,9 @@ function LoginForm(props) {
                             <label htmlFor={passwordId}>Password</label>
                             <input ref={passwordInput} type="password" className="form-control" id={passwordId} />
                         </div>
-                        <button type="submit" className="btn btn-primary">Login</button>
+                        <Link to='/login' >
+                        <button type="submit" className="btn btn-primary"> Sign Up </button>
+                        </Link>
                     </form>
                     );
                 }
@@ -63,10 +59,11 @@ function LoginForm(props) {
                 }
             })()
             }
+            
             </form>
             </div>
         </Fragment>
     )
 }
 
-export default LoginForm;
+export default SignUpForm;
