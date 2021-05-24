@@ -56,7 +56,7 @@ function SignUpForm(props) {
                                     <label htmlFor={passwordId}>Password</label>
                                     <input ref={passwordInput} type="password" className="form-control" id={passwordId} />
                                 </div>
-                                {/* {/* <Link to='/login' > */}
+                                 {/* <Link to='/login' > */}
                                     <button type="submit" className="btn btn-primary"> Sign Up </button>
                                 {/* </Link> */}
                             </form>
