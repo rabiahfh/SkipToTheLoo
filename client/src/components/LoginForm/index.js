@@ -27,7 +27,7 @@ function LoginForm(props) {
                 // console.log(data);
                 setEmail(data.data.email);
                 setLoggedIn(true);
-                history.push("/");
+                history.push("/welcome");
             })
             .catch(err => {
                 console.log(err);
