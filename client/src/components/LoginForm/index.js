@@ -2,7 +2,8 @@ import React, { Fragment, useContext, useRef } from 'react';
 import "./style.scss";
 import API from '../../utils/API';
 import UserContext from '../../utils/UserContext';
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useHistory  } from "react-router-dom";
 
 function LoginForm(props) {
     const { email, setEmail, loggedIn, setLoggedIn } = useContext(UserContext);
@@ -26,7 +27,7 @@ function LoginForm(props) {
                 // console.log(data);
                 setEmail(data.data.email);
                 setLoggedIn(true);
-                history.push("/");
+                history.push("/welcome");
             })
             .catch(err => {
                 console.log(err);
@@ -34,6 +35,13 @@ function LoginForm(props) {
     }
     return (
         <Fragment>
+            <div className='form-content-right'>
+            <form onSubmit={handleSubmit} className='form' noValidate>
+            <h1 style={{ fontSize:"30px", color:"rgb(240, 217, 17)"}}>
+                Welcome to
+            <span className="wave">🚻</span>SkipToTheLoo  
+            <i class='fab fa-typo3' />
+              </h1>
             { (() => {
                 if (!loggedIn) {
                     return (<form {...extraProps} onSubmit={handleSubmit}>
@@ -55,6 +63,8 @@ function LoginForm(props) {
                 }
             })()
             }
+            </form>
+            </div>
         </Fragment>
     )
 }

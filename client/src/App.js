@@ -12,6 +12,7 @@ import Logout from "./pages/Logout";
 import WelcomeUser from "./pages/WelcomeUser";
 import AddedBathrooms from "./pages/AddedBathrooms";
 
+
 function App() {
   const [email, setEmail] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
@@ -31,8 +32,14 @@ function App() {
             <Route exact path="/add">
               <AddedBathrooms/>
             </Route>
-            <Route exact path="/signup">
+            <Route exact path="/sign-up">
               <SignUp />
+            </Route>
+            <Route exact path="/adding">
+              <AddedBathrooms />
+            </Route>
+            <Route exact path="/welcome">
+              <WelcomeUser />
             </Route>
             <Route exact path="/logout">
               <Logout />
