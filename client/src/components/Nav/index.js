@@ -7,6 +7,54 @@ import { Container, Navbar, Col, Form, FormControl, Button } from "react-bootstr
 
 import './style.scss';
 
+function EndNavbar(props){
+   const isloggedIn = props.login;
+
+    if (isloggedIn) {
+      return <p className="logged-in-text">Logged in as {props.email}<Link to="/logout" >Logout</Link> </p>;
+    }
+    else {
+      return (
+        <Fragment>
+      <li>
+        <Link
+          to='/sign-up'
+          className='nav-links'
+          onClick={props.closeMobileMenu}
+        >
+            Sign Up
+        </Link>
+      </li>         
+    <Button buttonStyle='btn--outline' className="button">
+        <Link
+          to='/login'
+          className='nav-links'
+          onClick={props.closeMobileMenu}
+        > LOGIN
+        </Link>
+        </Button>
+        </Fragment>
+      )
+    } }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function Nav() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
@@ -21,10 +69,10 @@ function Nav() {
   return (
     <Navbar bg="dark" variant="dark">
       <Navbar.Brand href="/" className='navbar-logo'>
-        <Link to='/' className='navbar-logo'>
+        {/* <Link to='/' className='navbar-logo'> */}
           <span className="wave">🚻</span>SkipToTheLoo
-            <i class='fab fa-typo3' />
-        </Link>
+            <i className='fab fa-typo3' />
+        {/* </Link> */}
       </Navbar.Brand>
 
       <div className='menu-icon' onClick={handleClick}>
@@ -45,13 +93,17 @@ function Nav() {
             Add a Loo
               </Link>
         </li>
-        {(() => {
-          if (!loggedIn) {
+        
+        <EndNavbar login={loggedIn} closeMobileMenu={closeMobileMenu} email={email}/>
+      
+
+        {/* {(() => {
+          if (loggedIn) {
             return <p className="logged-in-text">Logged in as {email} <Link to="/logout" >Logout</Link> </p>;
           }
           else {
             return (
-              <>
+              <Fragment>
             <li>
               <Link
                 to='/sign-up'
@@ -69,10 +121,10 @@ function Nav() {
               > LOGIN
               </Link>
               </Button>
-              </>
+              </Fragment>
             )
           } }
-        )}
+        )} */}
       </ul>
     </Navbar>
   );
