@@ -11,7 +11,13 @@ function EndNavbar(props){
    const isloggedIn = props.login;
 
     if (isloggedIn) {
-      return <p className="logged-in-text">Logged in as {props.email}<Link to="/logout" >Logout</Link> </p>;
+      return <p className="logged-in-text">
+        {/* <Button buttonStyle='btn--outline' className="button"> */}
+        <Link to="/logout"
+        className='nav-links1'
+        >Logout</Link> 
+        {/* </Button> */}
+        </p>;
     }
     else {
       return (
@@ -69,10 +75,10 @@ function Nav() {
   return (
     <Navbar bg="dark" variant="dark">
       <Navbar.Brand href="/" className='navbar-logo'>
-        {/* <Link to='/' className='navbar-logo'> */}
+        <Link to='/' className='navbar-logo'>
           <span className="wave">🚻</span>SkipToTheLoo
             <i className='fab fa-typo3' />
-        {/* </Link> */}
+        </Link>
       </Navbar.Brand>
 
       <div className='menu-icon' onClick={handleClick}>

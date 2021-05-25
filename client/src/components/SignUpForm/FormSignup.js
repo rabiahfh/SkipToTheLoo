@@ -32,12 +32,6 @@ function SignUpForm(props) {
     }
     return (
         <Fragment>
-            {/* <div className='form-content-right'> */}
-            {/* <form onSubmit={handleSubmit} className='form' noValidate> */}
-            {/* <h1>
-              Get started with us today! Create your account by filling out the
-              information below.
-              </h1> */}
             { (() => {
                 if (!loggedIn) {
                     return (
@@ -56,24 +50,19 @@ function SignUpForm(props) {
                                     <label htmlFor={passwordId}>Password</label>
                                     <input ref={passwordInput} type="password" className="form-control" id={passwordId} />
                                 </div>
-                                 {/* <Link to='/login' > */}
-                                    <button type="submit" className="btn btn-primary"> Sign Up </button>
+                                {/* <Link to='/login' > */}
+                                <button type="submit" className="btn btn-primary"> Sign Up </button>
                                 {/* </Link> */}
                             </form>
-                            </div>
+                        </div>
                     );
-                    
-                }
-                else {
+                    }  else {
                     return <h3>{email}</h3>;
                 }
             })()
             }
-
-                            {/* </form> */}
-                            {/* </div> */}
         </Fragment>
-                    );
-                }
+    );
+}
 
-                export default SignUpForm;
+export default SignUpForm;

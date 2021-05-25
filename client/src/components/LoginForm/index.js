@@ -40,7 +40,7 @@ function LoginForm(props) {
             <h1 style={{ fontSize:"30px", color:"rgb(240, 217, 17)"}}>
                 Welcome to
             <span className="wave">🚻</span>SkipToTheLoo  
-            <i class='fab fa-typo3' />
+            <i className='fab fa-typo3' />
               </h1>
             { (() => {
                 if (!loggedIn) {
