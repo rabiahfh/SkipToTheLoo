@@ -3,6 +3,8 @@ import ReactMapGL, { Marker } from 'react-map-gl';
 import Geocoder from 'react-mapbox-gl-geocoder';
 import { Container, Col, Row, Button } from 'reactstrap';
 import "./map.css"
+import 'mapbox-gl/dist/mapbox-gl.css';
+
 
 const mapStyle = {
   width: '100%',
@@ -36,7 +38,7 @@ class MapView extends PureComponent {
       viewport: {
         latitude: 45.50884,
         longitude: -73.58781,
-        zoom: 15
+        zoom: 16
       },
       tempMarker: null,
       markers: []
@@ -90,7 +92,7 @@ class MapView extends PureComponent {
           <Col>
             <ReactMapGL
               mapboxApiAccessToken={mapboxApiKey}
-              mapStyle="mapbox://styles/mapbox/streets-v11"
+              mapStyle="mapbox://styles/mapbox/satellite-streets-v11"
               {...viewport}
               {...mapStyle}
               onViewportChange={(viewport) => this.setState({ viewport })}
