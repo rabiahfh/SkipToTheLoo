@@ -15,7 +15,13 @@ function Logout(props){
         });
     }, [setEmail, setLoggedIn])
     return (
-        <div><p>You are now logged out.</p></div>
+        <div><p style={{
+            textAlign:'center',
+            paddingTop:'200px',
+            fontSize:'50px',
+            color:'rgb(240, 217, 17)'
+
+        }}>You are now logged out.</p></div>
     )
 }
 export default Logout;
