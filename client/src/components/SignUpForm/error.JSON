@@ -1,0 +1,66 @@
+{
+    "config": {
+        "transformRequest": {},
+        "transformResponse": {},
+        "timeout": 0,
+        "xsrfCookieName": "XSRF-TOKEN",
+        "xsrfHeaderName": "X-XSRF-TOKEN",
+        "maxContentLength": -1,
+        "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/json;charset=utf-8"
+        },
+        "method": "post",
+        "url": "/api/user/signup",
+        "data": "{\"email\":\"\",\"password\":\"Welcome\",\"userName\":\"elena B\"}"
+    },
+    "request": {},
+    "response": {
+        "data": {
+            "errors": {
+                "email": {
+                    "name": "ValidatorError",
+                    "message": "Path `email` is required.",
+                    "properties": {
+                        "message": "Path `email` is required.",
+                        "type": "required",
+                        "path": "email",
+                        "value": ""
+                    },
+                    "kind": "required",
+                    "path": "email",
+                    "value": ""
+                }
+            },
+            "_message": "User validation failed",
+            "message": "User validation failed: email: Path `email` is required."
+        },
+        "status": 401,
+        "statusText": "Unauthorized",
+        "headers": {
+            "connection": "close",
+            "content-length": "330",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Wed, 26 May 2021 02:00:39 GMT",
+            "etag": "W/\"14a-H7nR+HoEbIGiD7CVFsoIaFr2RcM\"",
+            "vary": "Accept-Encoding",
+            "x-powered-by": "Express"
+        },
+        "config": {
+            "transformRequest": {},
+            "transformResponse": {},
+            "timeout": 0,
+            "xsrfCookieName": "XSRF-TOKEN",
+            "xsrfHeaderName": "X-XSRF-TOKEN",
+            "maxContentLength": -1,
+            "headers": {
+                "Accept": "application/json, text/plain, */*",
+                "Content-Type": "application/json;charset=utf-8"
+            },
+            "method": "post",
+            "url": "/api/user/signup",
+            "data": "{\"email\":\"\",\"password\":\"Welcome\",\"userName\":\"elena B\"}"
+        },
+        "request": {}
+    }
+}

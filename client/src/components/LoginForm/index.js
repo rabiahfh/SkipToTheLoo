@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useHistory  } from "react-router-dom";
 
 function LoginForm(props) {
-    const { email, setEmail, loggedIn, setLoggedIn } = useContext(UserContext);
+    const { email, setEmail, loggedIn, setLoggedIn, userName, setuserName } = useContext(UserContext);
     const history = useHistory();
     const emailInput = useRef();
     const passwordInput = useRef();
@@ -24,8 +24,9 @@ function LoginForm(props) {
         // console.log({ email: emailInput.current.value, password: passwordInput.current.value});
         API.login({ email: emailInput.current.value, password: passwordInput.current.value})
             .then(data => {
-                // console.log(data);
+                console.log(data);
                 setEmail(data.data.email);
+                setuserName(data.data.userName);
                 setLoggedIn(true);
                 history.push("/welcome");
             })
@@ -40,7 +41,7 @@ function LoginForm(props) {
             <h1 style={{ fontSize:"30px", color:"rgb(240, 217, 17)"}}>
                 Welcome to
             <span className="wave">🚻</span>SkipToTheLoo  
-            <i class='fab fa-typo3' />
+            <i className='fab fa-typo3' />
               </h1>
             { (() => {
                 if (!loggedIn) {

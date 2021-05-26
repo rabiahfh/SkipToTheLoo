@@ -1,6 +1,8 @@
 import {createContext} from 'react';
 
 const UserContext = createContext({
+    userName: "",
+    setuserName: () => {},
     email: "",
     setEmail: () => {},
     loggedIn: false,

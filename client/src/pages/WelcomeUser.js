@@ -6,13 +6,13 @@ import UserContext from "../utils/UserContext";
 
 function Welcomeuser() {
 
-    const {email, loggedIn} = useContext(UserContext);
+    const {email, loggedIn, userName} = useContext(UserContext);
 
     return (
         <div className = "container">
             <div className = "mt-5 row d-flex justify-content-between">
                     <LooPic />
-                    <h2 style={{ borderWidth: "10px" }} className=" p-3 m-3 border border-secondary border-5">WELCOME {email},</h2>
+                    <h2 style={{ borderWidth: "10px" }} className=" p-3 m-3 border border-secondary border-5">WELCOME {userName},</h2>
             </div>
             <div className="row">  
                 <h2 style={{ borderWidth: "10px" }} className=" p-3 m-3 border border-secondary border-5 ">RECENT BATHROOMS</h2> 

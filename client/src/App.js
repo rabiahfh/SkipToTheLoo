@@ -15,10 +15,11 @@ import AddedBathrooms from "./pages/AddedBathrooms";
 
 function App() {
   const [email, setEmail] = useState("");
+  const [userName, setuserName] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
   return (
     <Router>
-      <UserContext.Provider value={{email, setEmail, loggedIn, setLoggedIn}}>
+      <UserContext.Provider value={{email, setEmail, loggedIn, setLoggedIn, userName, setuserName}}>
         <div>
           <Nav />
           <Switch>
