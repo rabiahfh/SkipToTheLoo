@@ -24,9 +24,9 @@ function LoginForm(props) {
         // console.log({ email: emailInput.current.value, password: passwordInput.current.value});
         API.login({ email: emailInput.current.value, password: passwordInput.current.value})
             .then(data => {
-                // console.log(data);
+                console.log(data);
                 setEmail(data.data.email);
-                // setuserName(data.data.userName);
+                setuserName(data.data.userName);
                 setLoggedIn(true);
                 history.push("/welcome");
             })
