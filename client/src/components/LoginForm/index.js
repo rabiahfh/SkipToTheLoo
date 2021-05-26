@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useHistory  } from "react-router-dom";
 
 function LoginForm(props) {
-    const { email, setEmail, loggedIn, setLoggedIn } = useContext(UserContext);
+    const { email, setEmail, loggedIn, setLoggedIn, userName, setuserName } = useContext(UserContext);
     const history = useHistory();
     const emailInput = useRef();
     const passwordInput = useRef();
@@ -26,6 +26,7 @@ function LoginForm(props) {
             .then(data => {
                 // console.log(data);
                 setEmail(data.data.email);
+                // setuserName(data.data.userName);
                 setLoggedIn(true);
                 history.push("/welcome");
             })
