@@ -47,16 +47,16 @@ function SignUpForm(props) {
                                 </h1>
                                     <div className="form-group">
                                     <label htmlFor={userNameId}>User Name</label>
-                                    <input ref={userNameInput} type="text" className="form-control" id={userNameId} />
+                                    <input ref={userNameInput} type="text" className="form-control1" id={userNameId} />
                                     </div>
-                                <div className="form-group ">
+                                <div className="form-group">
                                     <label htmlFor={emailId}>Email address</label>
-                                    <input ref={emailInput} type="email" className="form-control" id={emailId} aria-describedby={emailHelpId} />
+                                    <input ref={emailInput} type="email" className="form-control1" id={emailId} aria-describedby={emailHelpId} />
                                     <small id={emailHelpId} className="email-help-text form-text text-muted">We'll never share your email with anyone else.</small>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor={passwordId}>Password</label>
-                                    <input ref={passwordInput} type="password" className="form-control" id={passwordId} />
+                                    <input ref={passwordInput} type="password" className="form-control1" id={passwordId} />
                                 </div>
                                 {/* <Link to='/login' > */}
                                 <button type="submit" className="btn btn-primary"> Sign Up </button>

@@ -31,14 +31,14 @@ function EndNavbar(props){
             Sign Up
         </Link>
       </li>         
-    <Button buttonStyle='btn--outline' className="button">
+    {/* <Button buttonStyle='btn--outline' className="button"> */}
         <Link
           to='/login'
           className='nav-links'
           onClick={props.closeMobileMenu}
-        > LOGIN
+        > Log-In
         </Link>
-        </Button>
+        {/* </Button> */}
         </Fragment>
       )
     } }
