@@ -12,7 +12,7 @@ mapboxgl.workerClass =
   require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
   const mapStyle = {
     width: '100%',
-    height: 600
+    height: 550
   }
   
   const mapboxApiKey = 'pk.eyJ1IjoianVhbjgzODkiLCJhIjoiY2tvbmZ4c2ZqMDB3azJ3dWltcnM2aDJkciJ9.TLJsEO2Db3VKiAslFKFziA'
@@ -75,7 +75,7 @@ mapboxgl.workerClass =
       return (
         <Container fluid={true}>
           <Row>
-            <Col><h2>Mapbox Tutorial</h2></Col>
+            {/* <Col><h2>Mapbox Tutorial</h2></Col> */}
           </Row>
           <Row className="py-4">
             <Col xs={2}>
@@ -89,7 +89,7 @@ mapboxgl.workerClass =
               />
             </Col>
             <Col>
-              <Button color="primary" onClick={this.add}>Add</Button>
+              <Button color="primary" onClick={this.add}>Search</Button>
             </Col>
           </Row>
           <Row>
@@ -128,3 +128,5 @@ mapboxgl.workerClass =
   }
   
   export default MapView;
+
+  
