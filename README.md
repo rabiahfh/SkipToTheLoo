@@ -19,7 +19,7 @@ https://morning-cliffs-39636.herokuapp.com/
 
 # Screenshots 
 
-![Demo](https://res.cloudinary.com/dn6cd98sl/image/upload/v1628555983/frontpage_kqkdua.png)
+![Demo](https://res.cloudinary.com/dn6cd98sl/image/upload/v1628556978/Capture_azlvec.png)
 
 # Usage
 
@@ -27,6 +27,9 @@ Tech Used
 React
 Node
 Axios
+Sass
+Mapbox API
+
 
 # License
 
@@ -35,6 +38,6 @@ Please click on the license tab or please check out the URL here for more inform
 # Questions
 Please reach out to me if you have any further questions
 
-github: https://github.com/Ramyamariyala/react-Egenerator.git 
+github: https://github.com/rabiahfh/SkipToTheLoo.git
 
 email: ramya.mariyala@gmail.com
